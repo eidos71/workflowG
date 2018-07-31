@@ -1,0 +1,4 @@
+<!-- <wfg-persona-list ></wfg-persona-list> -->
+<wfg-persona-list [personas]="personas" (notifyPersona)="onSelectPersona($event)"></wfg-persona-list>
+<wfg-persona-item [persona]="persona" (notify)="mostrarSuccess($event)"></wfg-persona-item>
+<!-- <!-- <p>Person</p> --> 

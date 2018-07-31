@@ -1,0 +1,12 @@
+<!-- <wfg-tarea-list ></wfg-tarea-list> -->
+
+<div *ngIf="tarea; then editItem else listTareas">
+</div> 
+<ng-template #listTareas>
+<wfg-tarea-list [tareas]="tareas" (notifyTarea)="onSelectTarea($event)"></wfg-tarea-list>
+</ng-template>
+
+<ng-template #editItem>
+<wfg-tarea-item [tarea]="tarea" (notify)="mostrarSuccess($event)"></wfg-tarea-item>
+</ng-template>
+

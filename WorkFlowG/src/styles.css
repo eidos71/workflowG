@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+
+.ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell {
+    color: #0e6cd2;
+    background: #c5e8f1b5;
+}  
+
+.ngx-datatable.scroll-vertical .datatable-body {
+    background: #eefcff8c;
+}
+
+.ngx-datatable.scroll-vertical .datatable-body:hover {
+    cursor: pointer;
+}
+
+
+

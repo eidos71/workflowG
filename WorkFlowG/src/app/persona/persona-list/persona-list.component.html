@@ -1,0 +1,46 @@
+<div class="table-responsive">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Email</th>
+        <th scope="col">Sexo</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas" >
+        <th scope="row" (click)="onSelect(persona)">{{persona.nombre}}</th>
+        <td (click)="onSelect(persona)">{{persona.apellido}}</td>
+        <td (click)="onSelect(persona)">{{persona.fechaNacimiento}}</td>
+        <td (click)="onSelect(persona)">{{persona.email}}</td>
+        <td (click)="onSelect(persona)">{{persona.sexo}}</td>         
+        <!-- <td><button type="button" class="btn btn-primary btn-sm" (click)="onDelete(persona)">Remove</button></td> -->
+        <td><button class="btn btn-outline-primary mb-2 mr-2" (click)="open(content, persona)">Remove</button></td>
+          <!-- Modal -->
+        <td><button class="btn btn-outline-primary mb-2 mr-2" (click)="print(persona)">Print</button></td>
+      </tr>
+    </tbody>
+  </table>   
+</div>
+<!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openSm(content)">Small modal</button> -->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Seguro que quieres borrar a {{modalPersona}}?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="d('Cross click')">Cancelar</button>
+      <button type="button" class="btn btn-light" (click)="c('close click')">Borrar</button>
+    </div>
+</ng-template>
+<!-- <wfg-delete-modal></wfg-delete-modal> -->
+        <!-- <button type="button" class="btn btn-primary btn-sm" (click)="onDelete(persona)">Remove</button> -->
+      
+
